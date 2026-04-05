@@ -83,5 +83,5 @@ function! ShowMode()
 endfunction
 set laststatus=2
 set noshowmode " Mode already displayed on statusline
-set statusline=%{ShowMode()}\ %t\ B:%n\ [%{&fileformat}\ :\ %{&fileencoding}]\
+set statusline=%{ShowMode()}\ %t\ B:%n\ [%{&fileformat}\ :\ %{&fileencoding}]
 set statusline+=%m%r%h%w\ %=\ %y\ %l:%c\ (%p%%)
