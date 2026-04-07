@@ -4,10 +4,7 @@
 "
 " TEMP COMMENTED
 " colorscheme shine
-" nnoremap <Space>b :ls<CR>:b<CR> -- check with Marco why :b misbehaves
-" set scl=yes         " debug column - useful outside plugins?
-" set number
-" set cursorline
+" set scl=yes  " debug column - useful outside plugins?
 
 filetype on
 syntax on
@@ -16,10 +13,12 @@ filetype indent on
 set directory=~/vimfiles/swp//
 set backupdir=~/vimfiles/backup//
 set undodir=~/vimfiles/undo//
+nnoremap <Space>b :ls<CR>:b
 noremap <Space>e :Explore<CR>
 noremap <Space>v :Vexplore!<CR>
-nnoremap <Space>b :ls<CR>
 
+set number
+set cursorline
 set ruler
 set enc=utf-8
 set t_Co=256
