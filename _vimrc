@@ -5,6 +5,8 @@
 " TEMP COMMENTED
 " colorscheme shine
 " set scl=yes  " debug column - useful outside plugins?
+" set formatoptions+=w
+" set textwidth=80
 
 filetype on
 syntax on
@@ -23,8 +25,6 @@ set ruler
 set enc=utf-8
 set t_Co=256
 set mouse=a
-set formatoptions+=w
-set textwidth=80
 
 set nowrap
 set hlsearch
