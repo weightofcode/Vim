@@ -3,7 +3,6 @@
 " -----------------------------------------------------------------------------
 "
 " TEMP COMMENTED
-" colorscheme shine
 " set scl=yes  " debug column - useful outside plugins?
 " set formatoptions+=w
 " set textwidth=80
@@ -12,12 +11,14 @@ filetype on
 syntax on
 filetype plugin on
 filetype indent on
+colorscheme shine
 set directory=~/vimfiles/swp//
 set backupdir=~/vimfiles/backup//
 set undodir=~/vimfiles/undo//
 nnoremap <Space>b :ls<CR>:b
 noremap <Space>e :Explore<CR>
 noremap <Space>v :Vexplore!<CR>
+noremap <Space>g :g/
 
 set number
 set cursorline
