@@ -11,14 +11,15 @@ filetype on
 syntax on
 filetype plugin on
 filetype indent on
-colorscheme shine
+colorscheme quiet
 set directory=~/vimfiles/swp//
 set backupdir=~/vimfiles/backup//
 set undodir=~/vimfiles/undo//
+nnoremap <Space>e :Explore<CR>
+nnoremap <Space>v :Vexplore<CR>
+nnoremap <Space>s :Sexplore<CR>
 nnoremap <Space>b :ls<CR>:b
-noremap <Space>e :Explore<CR>
-noremap <Space>v :Vexplore!<CR>
-noremap <Space>g :g/
+nnoremap <Space>g :g/
 
 set number
 set cursorline
@@ -54,6 +55,12 @@ set smarttab
 
 set wildmode=longest,list,full
 set wildmenu
+
+augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! call matchadd('Search', @", 1)
+    autocmd TextYankPost * silent! call matchadd('IncSearch', @", 1)
+augroup END
 
 if has("autocmd")
     autocmd FileType text setlocal
