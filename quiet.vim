@@ -291,7 +291,7 @@ endif
 if &background == 'light'
   let g:terminal_ansi_colors = ['#000000', '#af0000', '#005f00', '#af5f00', '#005faf', '#870087', '#008787', '#d7d7d7', '#626262', '#d70000', '#008700', '#d78700', '#0087d7', '#af00af', '#00afaf', '#ffffff']
 
-  hi Normal guifg=#000000 guibg=#d7d7d7 guisp=NONE gui=NONE ctermfg=16 ctermbg=188 cterm=NONE term=NONE
+  hi Normal guifg=#000000 guibg=#efefef guisp=NONE gui=NONE ctermfg=16 ctermbg=253 cterm=NONE term=NONE
   hi ColorColumn guifg=NONE guibg=#e4e4e4 guisp=NONE gui=NONE ctermfg=NONE ctermbg=254 cterm=NONE term=reverse
   hi Comment guifg=#00ff40 guibg=NONE guisp=NONE gui=NONE ctermfg=28 ctermbg=NONE cterm=NONE term=NONE
   hi Conceal guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE term=NONE
