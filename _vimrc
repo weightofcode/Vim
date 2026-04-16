@@ -16,7 +16,7 @@ filetype on
 syntax on
 filetype plugin on
 filetype indent on
-colorscheme quiet
+colorscheme shine
 
 set directory=~/vimfiles/swp//
 set backupdir=~/vimfiles/backup//
