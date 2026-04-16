@@ -75,6 +75,16 @@ if has("autocmd")
                 \ endif
 endif
 
+" Auto-detect indentation style
+function! DetectIndentation()
+    if search('^\t', 'n') > 0
+        setlocal noexpandtab
+    else
+        setlocal expandtab
+    endif
+endfunction
+autocmd BufReadPost * call DetectIndentation()
+
 function! ShowMode()
     let mode_map = {
                 \ 'n': 'NORMAL',
@@ -92,5 +102,5 @@ function! ShowMode()
 endfunction
 set laststatus=2
 set noshowmode " Mode already displayed on statusline
-set statusline=%{ShowMode()}\ %t\ B:%n\ [%{&fileformat}\ :\ %{&fileencoding}]
-set statusline+=%m%r%h%w\ %=\ %y\ %l:%c\ (%p%%)
+set statusline=\ %{ShowMode()}\ %t\ B:%n\ [%{&fileformat}\ :\ %{&fileencoding}]
+set statusline+=%m%r%h%w\ %=\ %y\ %l:%c\ (%p%%)\ 
