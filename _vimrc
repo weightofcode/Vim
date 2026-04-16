@@ -17,6 +17,7 @@ syntax on
 filetype plugin on
 filetype indent on
 colorscheme shine
+highlight SpecialKey ctermfg=255 guifg=#a0a0a0 cterm=NONE gui=NONE
 
 set directory=~/vimfiles/swp//
 set backupdir=~/vimfiles/backup//
