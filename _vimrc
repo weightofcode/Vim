@@ -64,11 +64,15 @@ set smarttab
 set wildmode=longest,list,full
 set wildmenu
 
+set laststatus=2
+set noshowmode " Mode already displayed on statusline
+set statusline=\ %{ShowMode()}\ %t\ B:%n\ [%{&fileformat}\:\%{&fileencoding}]
+set statusline+=%m%r%h%w\ %=\ %y\ %l:%c\ (%p%%)\ 
+
+" Always jump to the last known cursor position
+" Not when the position is invalid or when inside an event handler
 if has("autocmd")
     autocmd FileType text setlocal
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid or when inside an event handler
-    " (happens when dropping a file on Gvim).
     autocmd BufReadPost *
                 \ if line("'\"") >= 1 && line("'\"") <= line("$") |
                 \   exe "normal! g`\"" |
@@ -100,7 +104,3 @@ function! ShowMode()
                 \ }
     return get(mode_map, mode(), mode())
 endfunction
-set laststatus=2
-set noshowmode " Mode already displayed on statusline
-set statusline=\ %{ShowMode()}\ %t\ B:%n\ [%{&fileformat}\:\%{&fileencoding}]
-set statusline+=%m%r%h%w\ %=\ %y\ %l:%c\ (%p%%)\ 
