@@ -89,6 +89,7 @@ function! DetectIndentation()
 endfunction
 autocmd BufReadPost * call DetectIndentation()
 
+" Display Mode on statusline
 function! ShowMode()
     let mode_map = {
                 \ 'n': 'NORMAL',
@@ -104,3 +105,7 @@ function! ShowMode()
                 \ }
     return get(mode_map, mode(), mode())
 endfunction
+
+" Display Git branch on statusline
+
+
