@@ -107,5 +107,15 @@ function! ShowMode()
 endfunction
 
 " Display Git branch on statusline
+function! GitBranch()
+    let l:git_dir = expand('%:p:h')
+    let l:os_redirect = has('win32') ? ' 2>nul' : ' 2>/dev/null'
+    let l:branch = system('git -C ' . shellescape(l:git_dir) . ' branch --show-current' . l:os_redirect)
+    return trim(l:branch)
+endfunction
+" Update branch in a new buffer or after write command
+autocmd BufWinEnter,BufWritePost * let b:git_branch = GitBranch()
+" Update statusline
+set statusline+=%{b:git_branch}
 
 
